@@ -33,6 +33,10 @@ Filters the list table sortable columns for a specific screen
 Print out option HTML elements for the page templates drop-down
 [View](https://developer.wordpress.org/reference/functions/page_template_dropdown/)
 
+### restrict_manage_posts
+Fires before the Filter button on the Posts and Pages list tables
+[View](https://developer.wordpress.org/reference/hooks/restrict_manage_posts/)
+
 ### pre_get_posts
 Fires after the query variable object is created, but before the actual query is run
 [View](https://developer.wordpress.org/reference/hooks/pre_get_posts/)

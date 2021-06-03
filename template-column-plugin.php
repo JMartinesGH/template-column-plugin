@@ -35,3 +35,10 @@ function template_name_column( $column_name, $id ){
         }
     }
 }
+
+# add template name column to list of sortable columns
+add_filter('manage_edit-page_sortable_columns', 'template_name_sortable_columns');
+function template_name_sortable_columns( $columns ){
+    $columns['template-name'] = 'template-name';
+    return $columns;
+}

@@ -23,3 +23,7 @@ Fires in each custom column on the Pages list table
 ### get_page_templates
 Gets the page templates available in this theme
 [View](https://developer.wordpress.org/reference/functions/get_page_templates/)
+
+### manage_edit-page_sortable_columns
+Filters the list table sortable columns for a specific screen
+[View](https://developer.wordpress.org/reference/hooks/manage_this-screen-id_sortable_columns/)

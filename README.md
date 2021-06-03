@@ -1,5 +1,5 @@
 # template-column-plugin
-[Import WP Functions and Hooks](#Important-WP-functions-and-hooks)
+[Important WP Functions and Hooks](#Important-WP-functions-and-hooks)
 
 
 ## About

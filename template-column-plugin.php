@@ -15,6 +15,7 @@ function template_name_pages_column( $columns ){
     return $columns;
 }
 
+# add template name to column for each page
 add_action('manage_pages_custom_column', 'template_name_column', 10,2);
 function template_name_column( $column_name, $id ){
     # if column template name exists

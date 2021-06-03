@@ -42,3 +42,38 @@ function template_name_sortable_columns( $columns ){
     $columns['template-name'] = 'template-name';
     return $columns;
 }
+
+# add dropdown of templates
+add_action('restrict_manage_posts', 'template_name_dropdown');
+function template_name_dropdown( $post_type ){
+    if( 'page' !== $post_type) return;
+    $selected = $_GET['template_name_filter'];
+?>
+    <select name="template_name_filter" id="template_name_filter">
+        <option value="all" <?php echo ($selected == 'all')? 'selected': ''; ?>>All Templates</option>
+        <option value="default" <?php echo ($selected == 'default')?  'selected': ''; ?>>Default</option>
+        <?php # prints out options for all templates
+        page_template_dropdown($selected); ?>
+    </select>
+<?php
+}
+
+# filter based on selected template-name
+add_filter('pre_get_posts', 'template_name_filter_pages');
+function template_name_filter_pages( $query ){
+    global $pagenow;
+    if( 'edit.php' == $pagenow ){
+        if(isset($_GET['template_name_filter'])){
+            # selected template slug
+            $selected = $_GET['template_name_filter'];
+            if ('all' !== $selected){
+                // var_dump($selected);
+                #arguments for meta query? 
+                $query->set('meta_key', '_wp_page_template');
+                $query->set('meta_value', $selected);
+            }
+        }else{
+            // nothing to see here
+        }
+    }
+}

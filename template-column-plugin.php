@@ -6,4 +6,9 @@
  * Author: Jamie Martines
  * Version: 0.0.1
  */
-?>
+
+add_filter('manage_pages_columns', 'template_name_pages_column');
+function template_name_pages_column($columns){
+    $columns['template-name'] = __('Template Name');
+    return $columns;
+}
